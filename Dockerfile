@@ -1,9 +1,9 @@
 FROM kmallea/steamcmd
 
-MAINTAINER Kai Mallea <kmallea@gmail.com>
+MAINTAINER Peter <peter@test.com>
 
 # Run commands as the steam user
-USER steam
+# USER steam
 
 # Install CS:GO
 RUN mkdir /csgo &&\
