@@ -6,11 +6,11 @@ MAINTAINER Kai Mallea <kmallea@gmail.com>
 USER steam
 
 # Install CS:GO
-RUN mkdir /home/steam/csgo &&\
-    cd /home/steam/steamcmd &&\
+RUN mkdir /csgo &&\
+    cd /steamcmd &&\
     ./steamcmd.sh \
         +login anonymous \
-        +force_install_dir ../csgo \
+        +force_install_dir /csgo \
         +app_update 740 validate \
         +quit
 
@@ -18,5 +18,6 @@ RUN mkdir /home/steam/csgo &&\
 EXPOSE 27015
 
 # This container will be executable
-WORKDIR /home/steam/csgo
+WORKDIR /csgo
+VOLUME /csgo
 ENTRYPOINT ["./srcds_run"]
